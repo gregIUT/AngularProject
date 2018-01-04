@@ -1,0 +1,8 @@
+{
+    "name": "ProjectAngular",
+    "version": "1.0.0",
+    "keywords": ["util", "functional", "server", "client", "browser"],
+    "author": "greg0",
+    "contributors": [],
+    "dependencies": {}
+}
