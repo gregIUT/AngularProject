@@ -21,11 +21,9 @@ app.service("Myservice", function(){
                     var born = new Date(user.date_naissance);
                     return new Number((new Date().getTime() - born.getTime()) / 31536000000).toFixed(0);            
                 }
-
             }
             listPassenger.push(passager);
         });
-        
     }
     
                 
@@ -42,9 +40,10 @@ app.service("MyserviceData", function(){
     var villesList=[];
     var nationsList=[];
     
-    this.getClasses = function(){
-        classes.forEach(function(classe){
-            classeList.push(classe);
+    this.getVolClasses = function(){
+       // console.log("%o",classes);
+        classes.forEach(function(volClasse){
+            classeList.push(volClasse);
         });
         return classeList;
     }

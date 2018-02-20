@@ -1,23 +1,22 @@
 app = angular.module("App");
 
-app.controller("controllerA", function($scope,Myservice){
+app.controller("controllerA", ['$scope', 'Myservice', function($scope,srv){
         
                 $scope.list=[];
-                Myservice.init();
-                $scope.list=Myservice.getPassenger();
-               
-                //console.log("%O",Myservice.getPassenger());
-                //console.log("%O",$scope.list);
-            });
+                srv.init();
+                $scope.list=srv.getPassenger();
+                
+            }]);
             
-app.controller ("controllerForm",function($scope,MyserviceData){
+app.controller ("controllerForm",['$scope', 'MyserviceData',function($scope,srvData){
     $scope.classes=[];
     $scope.villes=[];
     $scope.nations=[];
     
-   $scope.classes=MyserviceData.getClasses();
-   $scope.villes=MyserviceData.getVilles();
-   $scope.nations=MyserviceData.getNations();
+   // console.log("%O",classes);
+    
+    $scope.classes=srvData.getVolClasses();
+    $scope.villes=srvData.getVilles();
+    $scope.nations=srvData.getNations();
    
-    console.log("%O",$scope.villes);
-});
+}]);
