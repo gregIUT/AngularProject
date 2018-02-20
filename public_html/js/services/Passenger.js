@@ -30,7 +30,30 @@ app.service("Myservice", function(){
                 
     this.getPassenger = function() {
         return listPassenger;
-        
+    }
+    
+    this.deletePassenger = function(id){
+        listPassenger.forEach(function (passenger,index,array){
+           if(passenger.id==id){
+               array.splice(index,1);
+           }
+        });
+    }
+    
+    this.updatePassenger = function(user){
+        listPassenger.forEach(function (passenger,index,array){
+           if(passenger.id==user.id){
+               array.splice(index,1,user);
+           } 
+        });
+    }
+    
+    this.getPassengerById = function(id){
+        listPassenger.forEach(function (passenger){
+           if(passenger.id==id){
+               return passenger;
+           } 
+        });
     }
                 
 });

@@ -68,8 +68,8 @@
                             
                     <label>Classe</label>
                     <div class="btn-group btn-group-justified" data-toggle="buttons">
-                        <label class="btn btn-success" ng-class="{ 'active' : radioModel1 == '{{item.libelle}}'}" ng-repeat="item in classes">
-                            <input type="radio" ng-model="radioModel1" name="q1" value="{{item.libelle}}"> {{item.libelle}}
+                        <label class="btn btn-primary" ng-class="{ 'active' : radioModel2 == '{{item.libelle}}'}" ng-repeat="item in classes">
+                            <input type="radio" ng-model="radioModel2" value="{{item.libelle}}"> {{item.libelle}}
                         </label>
                     </div>
                             
@@ -95,9 +95,7 @@
                             <span class="input-group-addon">
                                 <span class="glyphicon glyphicon-flag"></span>
                             </span>
-                            <input  title="ce champ est obligatoire"  class="form-control"
-                                    ng-model="nationalite" id="nom" name="nationalite" placeholder="Nationalité"
-                                    >
+                            <input type="text" placeholder="Nationalité" ng-model="ngModelOptionsSelected" ng-model-options="modelOptions" uib-typeahead="state for state in states | filter:$viewValue | limitTo:8" class="form-control">
                         </div>
                     </div>
                             
@@ -112,7 +110,9 @@
                                     ng-pattern='/^[A-Z]{2}[0-9]{2,4}$/' type="text" pattern='/^[A-Z]{2}[0-9]{2,4}$/'
                                     >
                         </div>
-                    </div>     
+                    </div>
+                    
+                    <input type="submit" class="btn btn-info" value="Valider">
                 </div>
             </div>
     </div>
