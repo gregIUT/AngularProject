@@ -12,15 +12,37 @@
                 <th><button type="button" class="btn btn-warning"><a href="#!/add" style="color: white">Add</a> <span class="glyphicon glyphicon-plus-sign"></span> </button></th>
             </tr>
         
-            <tr ng-repeat="item in list | offset : 0 track by $index">
+            <tr ng-repeat="item in list | offset : bigCurrentPage track by $index">
                 <td> {{item.id}} </td> 
-                <td> {{ item.genre == "male" ? "M." : "Mme"}}</td>
+                <td> {{ item.genre == "Male" ? "M." : "Mme."}}</td>
                 <td> {{item .prenom}}</td>
                 <td> {{item.nom}}</td>
                 <td>{{item.nationalite}}</td>
                 <td>{{item.date_naissance}}</td>
                 <td>{{item.getAge()}}</td>
-                <td><span class="glyphicon glyphicon-share"></span> <span class="glyphicon glyphicon-trash"></span> <span class="glyphicon glyphicon-edit"></span></td>
+                   <!-- <div ng-controller="ModalDemoCtrl as $ctrl" class="modal-demo">
+                        <script type="text/ng-template" id="myModalContent.html">
+                            <div class="modal-header">
+                                <h3 class="modal-title" id="modal-title">Confirmer la suppression</h3>
+                            </div>
+                            <div class="modal-body" id="modal-body">
+                              <p> Voulez-vous supprimer cet élément  </p>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button class="btn btn-danger" type="button" ng-click="$ctrl.ok()">Confirmer</button>
+                                <button class="btn btn-info" type="button" ng-click="$ctrl.cancel()">Annuler</button>
+                            </div>-->
+                        </script>
+                    </div>
+                <td>
+                    <a href="#!/passenger/{{item.id}}" style="color: black"><span class="glyphicon glyphicon-share"> </span> </a>  
+                    <!--<span class="glyphicon glyphicon-trash" ng-click="$ctrl.open()"></span> -->
+                    <span class="glyphicon glyphicon-trash"></span>
+                    <a href="#!/edit/{{item.id}}" style="color: black"><span class="glyphicon glyphicon-edit"></span></a>
+                </td>
             </tr>
         </table>
+    <ul uib-pagination total-items="bigTotalItems" ng-model="bigCurrentPage" max-size="maxSize" items-per-page="10" boundary-link-numbers="true" num-pages="numPages"></ul>
+    
 </div>

@@ -4,8 +4,9 @@ app.service("Myservice", function(){
     var listPassenger=[];
     
     this.init=function(){
+        listPassenger=[];
         data.forEach(function(user){
-            var passager = {
+            var passenger = {
                 id: user.id,
                 genre : user.genre,
                 prenom : user.prenom,
@@ -13,23 +14,54 @@ app.service("Myservice", function(){
                 date_naissance : user.date_naissance,
                 email : user.email,
                 classeVol : user.classe,
-                nuemro_vol: user.vol,
+                numeroVol: user.vol,
                 nationalite : user.nationalite,
-                ville_depart: user.ville.depart,
-                ville_arrivee   : user.ville.arrivee,
+                villeDepart: user.ville.depart,
+                villeArrivee   : user.ville.arrivee,
                 getAge : function(){
                     var born = new Date(user.date_naissance);
                     return new Number((new Date().getTime() - born.getTime()) / 31536000000).toFixed(0);            
                 }
             }
-            listPassenger.push(passager);
+            listPassenger.push(passenger);
         });
     }
     
-                
+    this.creaPassenger = function(id,genre,prenom,nom,dateNaissance,email,classeVol,numeroVol,nationalite,villeDepart,villeArrivee){
+        var passenger = {
+                id: id,
+                genre : genre,
+                prenom : prenom,
+                nom : nom,
+                date_naissance : dateNaissance,
+                email : email,
+                classeVol : classeVol,
+                numeroVol: numeroVol,
+                nationalite : nationalite,
+                villeDepart: villeDepart,
+                villeArrivee   : villeArrivee,
+                getAge : function(){
+                    var born = new Date(dateNaissance);
+                    return new Number((new Date().getTime() - born.getTime()) / 31536000000).toFixed(0);            
+                }
+            }
+            return passenger;
+    }            
                 
     this.getPassenger = function() {
         return listPassenger;
+    }
+    
+    this.getPassengerById = function(id){
+        var indexSelected =-1;
+        listPassenger.forEach(function (passenger,index,array){
+           if(passenger.id==id){
+               indexSelected=index;
+           } 
+        });
+        if(indexSelected>=0){
+            return listPassenger[indexSelected];
+        }
     }
     
     this.deletePassenger = function(id){
@@ -48,12 +80,8 @@ app.service("Myservice", function(){
         });
     }
     
-    this.getPassengerById = function(id){
-        listPassenger.forEach(function (passenger){
-           if(passenger.id==id){
-               return passenger;
-           } 
-        });
+    this.addPassenger = function(user){
+        listPassenger.push(user);
     }
                 
 });

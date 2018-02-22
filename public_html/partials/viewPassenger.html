@@ -1,0 +1,44 @@
+<div ng-controller="controllerB">
+    <h1>Passager : {{ passenger.genre == "Male" ? "M." : "Mme."}}  {{passenger .prenom}} {{passenger.nom}}</h1>
+        <table class="table table-hover">
+            
+            <h2>Informations personnelles</h2>
+            <tr>
+                <td>Genre</td> <td>{{ passenger.genre == "Male" ? "Monsieur" : "Madame"}}</td>
+            </tr>
+            <tr>
+                <td>Prénom</td> <td>{{passenger .prenom}}</td>
+            </tr>
+            <tr>
+                <td>Nom</td> <td>{{passenger.nom}}</td>
+            </tr>
+            <tr>
+                <td>Nationalité</td> <td>{{passenger.nationalite}}</td>
+            </tr>
+            <tr>
+                <td>Date de naissance</td> <td>{{passenger.date_naissance}}</td>
+            </tr>
+            <tr>
+                <td>Age</td> <td>{{passenger.getAge()}}</td>
+            </tr>
+            <tr>
+                <td>Email</td> <td>{{passenger.email}}</td>
+            </tr>
+        </table>
+    
+        <table class="table table-hover">
+            <h2>Informations du vol</h2>
+            <tr>
+                <td>Numéro de vol</td> <td>{{passenger.numeroVol}}</td>
+            </tr>
+            <tr>
+                <td>Ville de départ</td> <td>{{passenger.villeDepart}}</td>
+            </tr>
+            <tr>
+                <td>Ville d'arrivée</td> <td>{{passenger.villeArrivee}}</td>
+            </tr>
+        </table>
+    
+    <button type="button" class="btn btn-info"><a href="#!/" style="color: white"> <span class="glyphicon glyphicon-menu-left"></span>Retour à la liste</a></button>
+    
+</div>

@@ -5,10 +5,11 @@
         <group>
             <file>file:/D:/Afip/projet_angular/angular_project/public_html/index.html</file>
             <file>file:/D:/Afip/projet_angular/angular_project/public_html/js/filtres/Filters.js</file>
-            <file>file:/D:/Afip/projet_angular/angular_project/public_html/partials/formulaire.html</file>
-            <file>file:/D:/Afip/projet_angular/angular_project/public_html/data/data_extra.js</file>
+            <file>file:/D:/Afip/projet_angular/angular_project/public_html/partials/formulaireAdd.html</file>
             <file>file:/D:/Afip/projet_angular/angular_project/public_html/js/controllers/controller.js</file>
             <file>file:/D:/Afip/projet_angular/angular_project/public_html/partials/listPassenger.html</file>
+            <file>file:/D:/Afip/projet_angular/angular_project/public_html/partials/viewPassenger.html</file>
+            <file>file:/D:/Afip/projet_angular/angular_project/public_html/css/style.css</file>
             <file>file:/D:/Afip/projet_angular/angular_project/public_html/js/services/Passenger.js</file>
         </group>
     </open-files>
