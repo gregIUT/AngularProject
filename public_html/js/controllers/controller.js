@@ -24,6 +24,7 @@ app.controller ("controllerForm",['$scope', 'MyserviceData',function($scope,srvD
     $scope.nations=srvData.getNations();
     
     
+    
     var _selected;
 
   $scope.states = srvData.getNations();
@@ -43,6 +44,13 @@ app.controller ("controllerForm",['$scope', 'MyserviceData',function($scope,srvD
     },
     getterSetter: true
   };
+  
+  $scope.submit = function() {
+     //var passenger = srv.creaPassenger($scope.radioModel1,$scope.nom,$scope.prenom,$scope.mail,$scope.naissance,$scope.radioModel2,$scope.choixVillesD,$scope.choixVillesA,_selected,$scope.vol);
+     var passenger = srv.creaPassenger($scope.radioModel1,$scope.nom,$scope.prenom,$scope.mail,$scope.naissance,"Affaires",$scope.choixVillesD,$scope.choixVillesA,_selected,$scope.vol);
+     srv.addPassenger(passenger);
+      
+      };
    
 }]);
 

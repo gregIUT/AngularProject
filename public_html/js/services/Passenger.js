@@ -27,9 +27,9 @@ app.service("Myservice", function(){
         });
     }
     
-    this.creaPassenger = function(id,genre,prenom,nom,dateNaissance,email,classeVol,numeroVol,nationalite,villeDepart,villeArrivee){
+    this.creaPassenger = function(genre,prenom,nom,dateNaissance,email,classeVol,numeroVol,nationalite,villeDepart,villeArrivee){
         var passenger = {
-                id: id,
+                id: listPassenger.length,
                 genre : genre,
                 prenom : prenom,
                 nom : nom,
